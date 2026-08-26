@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="40dp">
+
+        <!-- TÍTULO -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ACTA DE FISCALIZACIÓN PRICE"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="12dp"
+            android:background="#E3F2FD"
+            android:textColor="#0D47A1"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- SECCIÓN I: DATOS DEL ESTABLECIMIENTO -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I. DATOS DEL ESTABLECIMIENTO"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:background="#BBDEFB"
+            android:textColor="#0D47A1"/>
+
+        <EditText android:id="@+id/etExpediente" android:hint="N° Expediente" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp"/>
+        <EditText android:id="@+id/etAgente" android:hint="Agente Fiscalizado" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp"/>
+        <EditText android:id="@+id/etCodigoOsi" android:hint="Código Osinergmin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp"/>
+        <EditText android:id="@+id/etRegistroHidro" android:hint="Registro de Hidrocarburos N°" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp"/>
+
+        <Button
+            android:id="@+id/btnFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Seleccionar Fecha de Diligencia"
+            android:layout_margin="6dp"
+            android:backgroundTint="#1976D2"
+            android:textColor="#FFFFFF"/>
+
+        <TextView android:id="@+id/tvFecha" android:hint="Fecha seleccionada: --/--/----" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="10dp" android:gravity="center" android:textSize="16sp"/>
+
+        <EditText android:id="@+id/etHoraApertura" android:hint="Hora de Apertura (HH:MM)" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp" android:inputType="time"/>
+        <EditText android:id="@+id/etHoraCierre" android:hint="Hora de Cierre (HH:MM)" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp" android:inputType="time"/>
+        <EditText android:id="@+id/etDireccion" android:hint="Dirección" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp"/>
+        <EditText android:id="@+id/etDistrito" android:hint="Distrito" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp"/>
+        <EditText android:id="@+id/etProvincia" android:hint="Provincia" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp"/>
+        <EditText android:id="@+id/etDepartamento" android:hint="Departamento" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp" android:text="HUANUCO"/>
+        <EditText android:id="@+id/etRuc" android:hint="RUC / DNI" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp"/>
+        <EditText android:id="@+id/etTelefono" android:hint="Teléfono / Fax" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp"/>
+
+        <!-- SECCIÓN II: DATOS DEL FISCALIZADOR -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="II. DATOS DEL FISCALIZADOR"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:background="#BBDEFB"
+            android:textColor="#0D47A1"
+            android:layout_marginTop="12dp"/>
+
+        <EditText android:id="@+id/etDniFiscal" android:hint="DNI del Fiscalizador" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp" android:text="46060749"/>
+        <EditText android:id="@+id/etNombreFiscal" android:hint="Apellidos y Nombres" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp" android:text="UZURIAGA CLAUDIO DARWIN"/>
+
+        <!-- SECCIÓN III: PRECIOS DE COMBUSTIBLES -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="III. INFORMACIÓN DE PRECIOS (S/)"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:background="#BBDEFB"
+            android:textColor="#0D47A1"
+            android:layout_marginTop="12dp"/>
+
+        <TextView android:text=" Diésel B5 / B5 S-50" android:textStyle="bold" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <EditText android:id="@+id/etDieselPrice" android:hint="Precio PRICE" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etDieselPub" android:hint="Publicado" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etDieselDisp" android:hint="Surtidor" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etDieselDesc" android:hint="Descuento" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+        </LinearLayout>
+
+        <TextView android:text="Gasolina 84 / Gasohol 84" android:textStyle="bold" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <EditText android:id="@+id/etG84Price" android:hint="Precio PRICE" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etG84Pub" android:hint="Publicado" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etG84Disp" android:hint="Surtidor" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etG84Desc" android:hint="Descuento" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+        </LinearLayout>
+
+        <TextView android:text=" Gasolina Regular" android:textStyle="bold" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <EditText android:id="@+id/etRegPrice" android:hint="Precio PRICE" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etRegPub" android:hint="Publicado" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etRegDisp" android:hint="Surtidor" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etRegDesc" android:hint="Descuento" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+        </LinearLayout>
+
+        <TextView android:text=" Gasolina Premium" android:textStyle="bold" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <EditText android:id="@+id/etPremPrice" android:hint="Precio PRICE" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etPremPub" android:hint="Publicado" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etPremDisp" android:hint="Surtidor" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etPremDesc" android:hint="Descuento" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+        </LinearLayout>
+
+        <TextView android:text=" GLP Automotor" android:textStyle="bold" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <EditText android:id="@+id/etGlpPrice" android:hint="Precio PRICE" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etGlpPub" android:hint="Publicado" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etGlpDisp" android:hint="Surtidor" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etGlpDesc" android:hint="Descuento" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+        </LinearLayout>
+
+        <TextView android:text=" GLP en Cilindros (Kg)" android:textStyle="bold" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <EditText android:id="@+id/etCil3" android:hint="3 Kg" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etCil5" android:hint="5 Kg" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etCil10" android:hint="10 Kg" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etCil15" android:hint="15 Kg" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etCil45" android:hint="45 Kg" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="3dp" android:inputType="numberDecimal"/>
+        </LinearLayout>
+        <EditText android:id="@+id/etMarcaGLP" android:hint="Marca de GLP en Cilindros" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp"/>
+
+        <!-- SECCIÓN IV: VERIFICACIONES -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IV. VERIFICACIONES"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:background="#BBDEFB"
+            android:textColor="#0D47A1"
+            android:layout_marginTop="12dp"/>
+
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp">
+            <TextView android:text="¿Teléfono publicado en el establecimiento? " android:layout_width="0dp" android:layout_weight="2" android:layout_height="wrap_content" android:textSize="14sp"/>
+            <RadioGroup android:id="@+id/rgTelPub" android:orientation="horizontal" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/telPubSi" android:text="Sí" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <RadioButton android:id="@+id/telPubNo" android:text="No" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp">
+            <TextView android:text="¿Teléfono registrado y actualizado en el PRICE? " android:layout_width="0dp" android:layout_weight="2" android:layout_height="wrap_content" android:textSize="14sp"/>
+            <RadioGroup android:id="@+id/rgTelReg" android:orientation="horizontal" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/telRegSi" android:text="Sí" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <RadioButton android:id="@+id/telRegNo" android:text="No" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp">
+            <TextView android:text="¿Horario de atención publicado? " android:layout_width="0dp" android:layout_weight="2" android:layout_height="wrap_content" android:textSize="14sp"/>
+            <RadioGroup android:id="@+id/rgHorario" android:orientation="horizontal" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/horarioSi" android:text="Sí" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <RadioButton android:id="@+id/horarioNo" android:text="No" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- SECCIÓN V: HECHOS VERIFICADOS -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="V. HECHOS VERIFICADOS"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:background="#BBDEFB"
+            android:textColor="#0D47A1"
+            android:layout_marginTop="12dp"/>
+
+        <EditText android:id="@+id/etHecho1" android:hint="Hecho verificado N° 1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="4dp" android:minLines="2"/>
+        <EditText android:id="@+id/etHecho2" android:hint="Hecho verificado N° 2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="4dp" android:minLines="2"/>
+        <EditText android:id="@+id/etHecho3" android:hint="Hecho verificado N° 3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="4dp" android:minLines="2"/>
+        <EditText android:id="@+id/etHecho4" android:hint="Hecho verificado N° 4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="4dp" android:minLines="2"/>
+        <EditText android:id="@+id/etHecho5" android:hint="Hecho verificado N° 5" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="4dp" android:minLines="2"/>
+        <EditText android:id="@+id/etHecho6" android:hint="Hecho verificado N° 6" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="4dp" android:minLines="2"/>
+
+        <!-- SECCIÓN VI: OTROS DATOS -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VI. OTROS DATOS"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:background="#BBDEFB"
+            android:textColor="#0D47A1"
+            android:layout_marginTop="12dp"/>
+
+        <EditText android:id="@+id/etOtras" android:hint="Otras ocurrencias detectadas durante la fiscalización" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp" android:minLines="2"/>
+        <EditText android:id="@+id/etDocumentos" android:hint="Documentación recabada" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp" android:minLines="2"/>
+        <EditText android:id="@+id/etObservaciones" android:hint="Manifestaciones u observaciones del Agente Fiscalizado" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp" android:minLines="2"/>
+        <EditText android:id="@+id/etNegativa" android:hint="Negativa del Agente Fiscalizado o participantes" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp" android:minLines="2"/>
+
+        <!-- SECCIÓN VII: DATOS DE QUIEN RECIBE EL ACTA -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VII. DATOS DE QUIEN RECIBE EL ACTA"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:background="#BBDEFB"
+            android:textColor="#0D47A1"
+            android:layout_marginTop="12dp"/>
+
+        <EditText android:id="@+id/etDniRecibe" android:hint="DNI" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp"/>
+        <EditText android:id="@+id/etNombreRecibe" android:hint="Apellidos y Nombres" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp"/>
+        <EditText android:id="@+id/etRelacionRecibe" android:hint="Relación con el Agente Fiscalizado" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="6dp"/>
+
+        <!-- BOTÓN DE IMPRESIÓN/PREVIA -->
+        <Button
+            android:id="@+id/btnVistaPrevia"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="📄 VISTA PREVIA / IMPRIMIR ACTA"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#2E7D32"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>
